@@ -32,6 +32,12 @@ p {
   font-size: 16px;
   max-width: 600px;
 }
+a {
+  color: #DF740C;
+  text-align: center;
+  font-size: 16px;
+  max-width: 600px;
+}
 
 div {
   text-align: center;
@@ -530,7 +536,7 @@ div {
         var lng = JSON.parse(e.data).longitude;
         var color = colors[Math.floor(Math.random() * colors.length)];
         globe.plugins.pings.add(lng, lat, { color: color, ttl: 4000, angle: Math.random() * 20 });
-        document.getElementById('txHash').innerHTML=JSON.parse(e.data).hash;
+        document.getElementById('txHash').innerHTML='<a href="http://helloblock.io/transactions/' + JSON.parse(e.data).hash + '">' + JSON.parse(e.data).hash + '</a>';
         if (JSON.parse(e.data).region_name) {
           var locale = JSON.parse(e.data).region_name + ', ' + JSON.parse(e.data).country_name;
         } else {
